@@ -97,12 +97,13 @@
 	
 	CGContextRestoreGState(context);
 }
+
 + (UIImage*) imageNamedTK:(NSString*)str{
 	
 	CGFloat s = 1.0f;
-	if([[UIScreen mainScreen] respondsToSelector:@selector(scale)]){
+/*	if([[UIScreen mainScreen] respondsToSelector:@selector(scale)]){
 		s = [[UIScreen mainScreen] scale];
-	}
+	}*/
 	
 	NSString *path = [NSString stringWithFormat:@"%@%@.png",str,s > 1 ? @"@2x":@""];
 	return [UIImage imageWithContentsOfFile:TKBUNDLE(path)];
